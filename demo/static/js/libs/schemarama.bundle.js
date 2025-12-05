@@ -28695,8 +28695,18 @@ class ValidationReport {
      */
     getAnnotations(shape, property) {
         const mapper = new Map();
-        if (!this.shapes.get(shape) || this.shapes.get(shape).length === 0) return mapper;
-        let propStructure = this.shapes.get(shape).expression.expressions
+        const shapeCore = this.shapes.get(shape);
+
+        // Handle missing shape or empty shape
+        if (!shapeCore || shapeCore.length === 0) return mapper;
+
+        // Handle array of shapes (from getShapeCore)
+        const shapeObj = Array.isArray(shapeCore) ? shapeCore[0] : shapeCore;
+
+        // Handle missing expression or expressions
+        if (!shapeObj || !shapeObj.expression || !shapeObj.expression.expressions) return mapper;
+
+        let propStructure = shapeObj.expression.expressions
             .filter(/** @param {{predicate: string}} x */x => x.predicate === property)[0];
         if (!propStructure || !propStructure.annotations) return mapper;
         propStructure.annotations.forEach(/** @param {{predicate: string, object:{value: string}}} x*/x => {
