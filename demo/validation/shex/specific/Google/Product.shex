@@ -3,7 +3,7 @@
     // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/product-snippet#name"
     // techdoc:description "Required. The name of the product.";
 
-    schema:image . +
+    schema:image +
     // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/product-snippet#image"
     // techdoc:description "Recommended. Image of the product. Provide 3 images with different aspect ratios."
     // techdoc:identifier "warning";

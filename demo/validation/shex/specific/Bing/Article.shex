@@ -4,12 +4,12 @@
     // techdoc:description "Recommended. The headline/title of the article. Bing supports Schema.org Article, NewsArticle, and BlogPosting types."
     // techdoc:identifier "warning";
 
-    schema:image . +
+    schema:image +
     // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
     // techdoc:description "Recommended. Images associated with the article."
     // techdoc:identifier "warning";
 
-    schema:author . +
+    schema:author +
     // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
     // techdoc:description "Recommended. The author of the article."
     // techdoc:identifier "warning";

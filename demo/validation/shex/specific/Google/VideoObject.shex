@@ -3,7 +3,7 @@
     // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#name"
     // techdoc:description "Required. The title of the video. Make sure to use unique text that clearly describes the video.";
 
-    schema:thumbnailUrl . +
+    schema:thumbnailUrl +
     // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#thumbnailurl"
     // techdoc:description "Required. A URL pointing to the video's unique thumbnail image file. Images must be at least 60x30 pixels and be crawlable and indexable.";
 
@@ -43,14 +43,14 @@
 }
 
 <#ValidGoogleVideoObjectWithRegions> @<#ValidGoogleVideoObject> AND {
-    schema:regionsAllowed . +
+    schema:regionsAllowed +
     // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#regionsallowed"
     // techdoc:description "Recommended. The regions where the video is allowed, in ISO 3166-1 alpha-2 format. If not specified, video is assumed allowed everywhere. Use either regionsAllowed OR ineligibleRegion, not both."
     // techdoc:identifier "warning";
 }
 
 <#ValidGoogleVideoObjectWithIneligibleRegions> @<#ValidGoogleVideoObject> AND {
-    schema:ineligibleRegion . +
+    schema:ineligibleRegion +
     // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#ineligibleregion"
     // techdoc:description "Recommended. The region where the video isn't allowed, in ISO 3166-1 alpha-2 format. Use either regionsAllowed OR ineligibleRegion, not both."
     // techdoc:identifier "warning";
@@ -67,7 +67,7 @@
 }
 
 <#ValidGoogleVideoObjectWithClips> @<#ValidGoogleVideoObject> AND {
-    schema:hasPart @<#ValidSchemaClip> . +
+    schema:hasPart @<#ValidSchemaClip> +
     // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#haspart-clip"
     // techdoc:description "Recommended for key moments. An array of one or more Clip objects that denote key moments in the video. Each clip must have a unique start time. Maximum 10 clips per video."
     // techdoc:identifier "info";

@@ -21,7 +21,7 @@
 }
 
 <#ValidGoogleCourseList> @<#ValidSchemaItemList> AND {
-    schema:itemListElement @<#ValidSchemaListItem> . +
+    schema:itemListElement @<#ValidSchemaListItem> +
     // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/course#itemlistelement"
     // techdoc:description "Required for carousel display. Annotation for an individual item page. Every item must have a unique URL. Minimum 3 courses required.";
 }

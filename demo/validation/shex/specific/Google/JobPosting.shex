@@ -42,7 +42,7 @@
 }
 
 <#ValidGoogleJobPostingWithLocation> @<#ValidGoogleJobPosting> AND {
-    schema:jobLocation . +
+    schema:jobLocation +
     // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/job-posting#joblocation"
     // techdoc:description "Required (unless applicantLocationRequirements is present). The physical location(s) where the employee will report to work. Must include addressCountry at minimum.";
 }
@@ -53,7 +53,7 @@
     // techdoc:description "Recommended. Set to TELECOMMUTE for jobs that are 100% remote. Job description must explicitly state the remote nature of work."
     // techdoc:identifier "warning";
 
-    schema:applicantLocationRequirements . +
+    schema:applicantLocationRequirements +
     // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/job-posting#applicantlocationrequirements"
     // techdoc:description "Recommended. Geographic location(s) where employees may be located for work-from-home jobs. At least one country must be specified."
     // techdoc:identifier "warning";

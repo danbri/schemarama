@@ -3,7 +3,7 @@
     // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
     // techdoc:description "Required. The name of the product. Bing supports Schema.org markup in JSON-LD, Microdata, or RDFa formats.";
 
-    schema:image . +
+    schema:image +
     // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
     // techdoc:description "Recommended. Product images. Bing supports multiple formats and has no specific image size requirements."
     // techdoc:identifier "warning";

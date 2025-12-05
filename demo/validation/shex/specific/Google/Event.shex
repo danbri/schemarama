@@ -26,7 +26,7 @@
     // techdoc:description "Recommended. The status of the event (EventScheduled, EventCancelled, EventPostponed, or EventRescheduled). Defaults to EventScheduled if not specified."
     // techdoc:identifier "warning";
 
-    schema:image . +
+    schema:image +
     // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#image"
     // techdoc:description "Recommended. URL of an image or logo for the event. Images must be at least 720px wide, with 1920px recommended. Supports 16x9, 4x3, and 1x1 aspect ratios."
     // techdoc:identifier "warning";
@@ -41,7 +41,7 @@
     // techdoc:description "Recommended. The person or organization that is hosting the event."
     // techdoc:identifier "warning";
 
-    schema:performer . +
+    schema:performer +
     // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#performer"
     // techdoc:description "Recommended. The participants performing at the event, such as artists and comedians."
     // techdoc:identifier "warning";
@@ -116,7 +116,7 @@
     // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#eventstatus-rescheduled"
     // techdoc:description "Required for rescheduled events. Set to EventRescheduled.";
 
-    schema:previousStartDate . +
+    schema:previousStartDate +
     // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#previousstartdate"
     // techdoc:description "Recommended. The previously scheduled start date for rescheduled events. Can be repeated for multiple reschedules."
     // techdoc:identifier "warning";

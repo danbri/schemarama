@@ -1,5 +1,5 @@
 <#ValidGoogleFAQPage> @<#ValidSchemaFAQPage> AND {
-    schema:mainEntity @<#ValidSchemaQuestion> . +
+    schema:mainEntity @<#ValidSchemaQuestion> +
     // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/faqpage#mainentity"
     // techdoc:description "Required. An array of Question elements which contain the list of answered questions that this FAQPage is about.";
 }

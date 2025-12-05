@@ -23,7 +23,7 @@
     // techdoc:description "Recommended. Serving size information. Displays on the rich pin."
     // techdoc:identifier "warning";
 
-    schema:recipeIngredient . +
+    schema:recipeIngredient +
     // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
     // techdoc:description "Recommended. List of ingredients used in the recipe. Displays on the rich pin."
     // techdoc:identifier "warning";
