@@ -72,16 +72,25 @@ function removeUrls(text) {
 }
 
 async function validate(data, lang) {
-    let report;
-    let baseUrl = `${window.location.href}${randomString()}`;
-    let type = (await getType(data, baseUrl)).replace(/.*[/#]/, '');
-    if (lang === 'shex') {
-        report = await validateShex(data, type, baseUrl);
-    } else if (lang === 'shacl') {
-        report = await validateShacl(data, baseUrl);
+    try {
+        let report;
+        let baseUrl = `${window.location.href}${randomString()}`;
+        let type = (await getType(data, baseUrl)).replace(/.*[/#]/, '');
+        if (lang === 'shex') {
+            report = await validateShex(data, type, baseUrl);
+        } else if (lang === 'shacl') {
+            report = await validateShacl(data, baseUrl);
+        }
+        if (!report) {
+            alert('Validation skipped - no matching shapes found for this type');
+            return;
+        }
+        let dataItems = parseDataItems(report.quads, report.baseUrl, 0);
+        addReport(type, minifyFailuresList(report.failures), dataItems);
+    } catch (error) {
+        console.error('Validation error:', error);
+        alert('Validation error: ' + error.message);
     }
-    let dataItems = parseDataItems(report.quads, report.baseUrl, 0);
-    addReport(type, minifyFailuresList(report.failures), dataItems);
 }
 
 function parseDataItems(dataset, shapeId, indent) {
