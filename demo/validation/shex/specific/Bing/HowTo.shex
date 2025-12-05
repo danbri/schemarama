@@ -1,0 +1,87 @@
+<#ValidBingHowTo> @<#ValidSchemaHowTo> AND {
+    schema:name .
+    // techdoc:url "https://schema.org/name"
+    // techdoc:description "Required. The title of the how-to guide.";
+
+    schema:step @<#ValidSchemaHowToStep> {1,}
+    // techdoc:url "https://schema.org/step"
+    // techdoc:description "Required. Array of HowToStep objects explaining how to complete the task. Must have at least one step.";
+
+    schema:description .
+    // techdoc:url "https://schema.org/description"
+    // techdoc:description "Recommended. A short description of what the how-to accomplishes."
+    // techdoc:identifier "warning";
+
+    schema:image .
+    // techdoc:url "https://schema.org/image"
+    // techdoc:description "Recommended. Image representing the completed task or process."
+    // techdoc:identifier "warning";
+
+    schema:totalTime .
+    // techdoc:url "https://schema.org/totalTime"
+    // techdoc:description "Recommended. The total time required to perform all instructions, in ISO 8601 duration format."
+    // techdoc:identifier "warning";
+
+    schema:estimatedCost .
+    // techdoc:url "https://schema.org/estimatedCost"
+    // techdoc:description "Recommended. The estimated cost of supplies consumed when performing instructions."
+    // techdoc:identifier "warning";
+
+    schema:supply .
+    // techdoc:url "https://schema.org/supply"
+    // techdoc:description "Recommended. A supply consumed when performing instructions."
+    // techdoc:identifier "warning";
+
+    schema:tool .
+    // techdoc:url "https://schema.org/tool"
+    // techdoc:description "Recommended. An object used (but not consumed) when performing instructions."
+    // techdoc:identifier "warning";
+}
+
+<#ValidBingHowToStep> @<#ValidSchemaHowToStep> AND {
+    schema:name .
+    // techdoc:url "https://schema.org/name"
+    // techdoc:description "Recommended. The name or short title of the step."
+    // techdoc:identifier "warning";
+
+    schema:text .
+    // techdoc:url "https://schema.org/text"
+    // techdoc:description "Required. The full instruction text for this step.";
+
+    schema:image .
+    // techdoc:url "https://schema.org/image"
+    // techdoc:description "Recommended. Image illustrating this step."
+    // techdoc:identifier "warning";
+
+    schema:url .
+    // techdoc:url "https://schema.org/url"
+    // techdoc:description "Recommended. A URL that directly links to this step on the page."
+    // techdoc:identifier "warning";
+}
+
+<#ValidBingHowToSection> @<#ValidSchemaHowToSection> AND {
+    schema:name .
+    // techdoc:url "https://schema.org/name"
+    // techdoc:description "Required. The name of the section grouping related steps.";
+
+    schema:itemListElement @<#ValidSchemaHowToStep> {1,}
+    // techdoc:url "https://schema.org/itemListElement"
+    // techdoc:description "Required. Array of HowToStep objects within this section.";
+}
+
+<#ValidBingHowToSupply> @<#ValidSchemaHowToSupply> AND {
+    schema:name .
+    // techdoc:url "https://schema.org/name"
+    // techdoc:description "Required. The name of the supply.";
+
+    schema:estimatedCost .
+    // techdoc:url "https://schema.org/estimatedCost"
+    // techdoc:description "Recommended. The estimated cost of this supply."
+    // techdoc:identifier "warning";
+}
+
+<#ValidBingHowToTool> @<#ValidSchemaHowToTool> AND {
+    schema:name .
+    // techdoc:url "https://schema.org/name"
+    // techdoc:description "Required. The name of the tool.";
+}

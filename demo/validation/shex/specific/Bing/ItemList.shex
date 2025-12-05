@@ -1,0 +1,21 @@
+<#ValidBingItemList> @<#ValidSchemaItemList> AND {
+    schema:itemListElement @<#ValidSchemaListItem> {2,}
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Required. Array of ListItem objects. Must contain at least 2 items.";
+}
+
+<#ValidBingItemListItem> @<#ValidSchemaListItem> AND {
+    schema:position .
+    // techdoc:url "https://schema.org/position"
+    // techdoc:description "Required. The position of the item in the list, starting with 1.";
+
+    schema:name .
+    // techdoc:url "https://schema.org/name"
+    // techdoc:description "Recommended. The name or title of the list item."
+    // techdoc:identifier "warning";
+
+    schema:url .
+    // techdoc:url "https://schema.org/url"
+    // techdoc:description "Recommended. The URL of the list item."
+    // techdoc:identifier "warning";
+}

@@ -1,0 +1,20 @@
+<#ValidGoogleBreadcrumbList> @<#ValidSchemaBreadcrumbList> AND {
+    schema:itemListElement @<#ValidSchemaListItem> {2,}
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/breadcrumb#itemlistelement"
+    // techdoc:description "Required. Array of ListItem objects. Must contain at least 2 items to form a breadcrumb trail.";
+}
+
+<#ValidGoogleBreadcrumbListItem> @<#ValidSchemaListItem> AND {
+    schema:position .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/breadcrumb#position"
+    // techdoc:description "Required. The position of the breadcrumb in the trail, starting with 1.";
+
+    schema:name .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/breadcrumb#name"
+    // techdoc:description "Required. The title of the breadcrumb displayed for the user.";
+
+    schema:item .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/breadcrumb#item"
+    // techdoc:description "Recommended. The URL to the webpage that the breadcrumb represents. Not required for the last item in the list."
+    // techdoc:identifier "warning";
+}

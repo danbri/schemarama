@@ -1,0 +1,47 @@
+<#ValidGoogleItemList> @<#ValidSchemaItemList> AND {
+    schema:itemListElement @<#ValidSchemaListItem> {2,}
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/carousel#itemlistelement"
+    // techdoc:description "Required. Array of ListItem objects. Must contain at least 2 items of the same type (Course, Movie, Recipe, or Restaurant).";
+}
+
+<#ValidGoogleItemListSummaryPage> @<#ValidGoogleItemList> AND {
+    schema:itemListElement @<#ValidGoogleItemListSummaryPageItem> {2,}
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/carousel#summary-page"
+    // techdoc:description "Summary page implementation where each item links to a separate detail page.";
+}
+
+<#ValidGoogleItemListSummaryPageItem> @<#ValidSchemaListItem> AND {
+    schema:position .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/carousel#listitem-position"
+    // techdoc:description "Required. The position in the carousel, starting with 1.";
+
+    schema:url .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/carousel#listitem-url"
+    // techdoc:description "Required for summary pages. The canonical URL of the detail page for this item.";
+}
+
+<#ValidGoogleItemListAllInOne> @<#ValidGoogleItemList> AND {
+    schema:itemListElement @<#ValidGoogleItemListAllInOneItem> {2,}
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/carousel#all-in-one-page"
+    // techdoc:description "All-in-one page implementation where all items are on the same page with anchor links.";
+}
+
+<#ValidGoogleItemListAllInOneItem> @<#ValidSchemaListItem> AND {
+    schema:position .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/carousel#listitem-position-all-in-one"
+    // techdoc:description "Required. The position in the carousel, starting with 1.";
+
+    schema:item .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/carousel#listitem-item"
+    // techdoc:description "Required for all-in-one pages. The structured data object (Course, Movie, Recipe, or Restaurant) for this list item.";
+}
+
+<#ValidGoogleItemListItem> {
+    schema:name .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/carousel#item-name"
+    // techdoc:description "Required. The title of the item displayed in the carousel.";
+
+    schema:url .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/carousel#item-url"
+    // techdoc:description "Required. The URL of the item (detail page URL or anchor link on all-in-one pages).";
+}

@@ -1,0 +1,19 @@
+<#ValidBingBreadcrumbList> @<#ValidSchemaBreadcrumbList> AND {
+    schema:itemListElement @<#ValidSchemaListItem> {2,}
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Required. Array of ListItem objects representing the breadcrumb trail. Must contain at least 2 items.";
+}
+
+<#ValidBingBreadcrumbListItem> @<#ValidSchemaListItem> AND {
+    schema:position .
+    // techdoc:url "https://schema.org/position"
+    // techdoc:description "Required. The position of the breadcrumb in the trail, starting with 1.";
+
+    schema:name .
+    // techdoc:url "https://schema.org/name"
+    // techdoc:description "Required. The title of the breadcrumb displayed for the user.";
+
+    schema:item .
+    // techdoc:url "https://schema.org/item"
+    // techdoc:description "Required. The URL to the webpage that the breadcrumb represents.";
+}
