@@ -32,9 +32,10 @@ $(document).ready(async () => {
         constructHierarchySelector(hierarchy, 0);
     });
     await $.get(`services-map.json`, (res) => shapeToService = res);
-    if (window.location.pathname.includes('demo')) {
-        // Tests not available in static deployment
-    }
+    await $.get(`tests.json`, (res) => {
+        const tests = typeof res === 'string' ? JSON.parse(res) : res;
+        initTests(tests);
+    });
 
     shexValidator = new schemarama.ShexValidator(shexShapes, { annotations: annotations });
     shaclValidator = new schemarama.ShaclValidator(shaclShapes, {
