@@ -16,27 +16,85 @@ hierarchy = {
     'service': 'Schema',
     'nested': [
         {
-            'service': 'ServiceA'
-        },
-        {
-            'service': 'ServiceB',
+            'service': 'Google',
             'nested': [
                 {
-                    'service': 'ServiceBProduct1'
+                    'service': 'GoogleProduct'
                 },
                 {
-                    'service': 'ServiceBProduct2'
+                    'service': 'GoogleArticle'
                 },
                 {
-                    'service': 'ServiceBProduct3'
+                    'service': 'GoogleEvent'
+                },
+                {
+                    'service': 'GoogleRecipe'
+                },
+                {
+                    'service': 'GoogleJobPosting'
+                },
+                {
+                    'service': 'GoogleLocalBusiness'
+                },
+                {
+                    'service': 'GoogleOrganization'
+                },
+                {
+                    'service': 'GoogleVideo'
+                },
+                {
+                    'service': 'GoogleMovie'
+                },
+                {
+                    'service': 'GoogleCourse'
+                },
+                {
+                    'service': 'GoogleSoftwareApplication'
+                },
+                {
+                    'service': 'GoogleFAQ'
+                },
+                {
+                    'service': 'GoogleQA'
+                },
+                {
+                    'service': 'GoogleReview'
                 }
             ]
         },
         {
-            'service': 'ServiceC'
+            'service': 'Pinterest',
+            'nested': [
+                {
+                    'service': 'PinterestProduct'
+                },
+                {
+                    'service': 'PinterestArticle'
+                },
+                {
+                    'service': 'PinterestRecipe'
+                }
+            ]
         },
         {
-            'service': 'ServiceD'
+            'service': 'Bing',
+            'nested': [
+                {
+                    'service': 'BingProduct'
+                },
+                {
+                    'service': 'BingArticle'
+                },
+                {
+                    'service': 'BingEvent'
+                },
+                {
+                    'service': 'BingLocalBusiness'
+                },
+                {
+                    'service': 'BingOrganization'
+                }
+            ]
         }
     ]
 }

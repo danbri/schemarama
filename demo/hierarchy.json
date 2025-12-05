@@ -1,0 +1,86 @@
+{
+  "service": "Schema",
+  "nested": [
+    {
+      "service": "Google",
+      "nested": [
+        {
+          "service": "GoogleProduct"
+        },
+        {
+          "service": "GoogleArticle"
+        },
+        {
+          "service": "GoogleEvent"
+        },
+        {
+          "service": "GoogleRecipe"
+        },
+        {
+          "service": "GoogleJobPosting"
+        },
+        {
+          "service": "GoogleLocalBusiness"
+        },
+        {
+          "service": "GoogleOrganization"
+        },
+        {
+          "service": "GoogleVideo"
+        },
+        {
+          "service": "GoogleMovie"
+        },
+        {
+          "service": "GoogleCourse"
+        },
+        {
+          "service": "GoogleSoftwareApplication"
+        },
+        {
+          "service": "GoogleFAQ"
+        },
+        {
+          "service": "GoogleQA"
+        },
+        {
+          "service": "GoogleReview"
+        }
+      ]
+    },
+    {
+      "service": "Pinterest",
+      "nested": [
+        {
+          "service": "PinterestProduct"
+        },
+        {
+          "service": "PinterestArticle"
+        },
+        {
+          "service": "PinterestRecipe"
+        }
+      ]
+    },
+    {
+      "service": "Bing",
+      "nested": [
+        {
+          "service": "BingProduct"
+        },
+        {
+          "service": "BingArticle"
+        },
+        {
+          "service": "BingEvent"
+        },
+        {
+          "service": "BingLocalBusiness"
+        },
+        {
+          "service": "BingOrganization"
+        }
+      ]
+    }
+  ]
+}

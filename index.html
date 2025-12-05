@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schemarama - Multi-Platform Structured Data Validation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.2em;
+        }
+        .platform-logos {
+            display: flex;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .platform-logo {
+            width: 60px;
+            height: 60px;
+        }
+        .section {
+            margin: 30px 0;
+        }
+        .section h2 {
+            color: #764ba2;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 5px;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .stat-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid #667eea;
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .stat-label {
+            color: #666;
+            margin-top: 5px;
+        }
+        ul {
+            list-style-position: inside;
+            margin-left: 20px;
+        }
+        li {
+            margin: 10px 0;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        .btn-secondary {
+            background: #764ba2;
+            color: white;
+        }
+        .btn-outline {
+            border: 2px solid #667eea;
+            color: #667eea;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: "Courier New", monospace;
+        }
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Schemarama</h1>
+        <p class="subtitle">Multi-Platform Structured Data Validation with ShEx</p>
+
+        <div class="platform-logos">
+            <img src="demo/static/images/services/Google.svg" alt="Google" class="platform-logo" title="Google">
+            <img src="demo/static/images/services/Bing.svg" alt="Bing" class="platform-logo" title="Bing">
+            <img src="demo/static/images/services/Pinterest.svg" alt="Pinterest" class="platform-logo" title="Pinterest">
+            <img src="demo/static/images/services/Yandex.svg" alt="Yandex" class="platform-logo" title="Yandex (coming soon)">
+        </div>
+
+        <div class="section">
+            <h2>📊 Project Statistics</h2>
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">13</div>
+                    <div class="stat-label">Base Schema Types</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Platforms</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">76+</div>
+                    <div class="stat-label">Validation Shapes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">738</div>
+                    <div class="stat-label">Total Mappings</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🚀 What is Schemarama?</h2>
+            <p>Schemarama provides ShEx (Shape Expressions) validation schemas for Schema.org structured data, tailored to the specific requirements of major search engines and platforms.</p>
+            <br>
+            <p>This project helps developers validate their structured data markup against platform-specific guidelines, ensuring rich results appear correctly across Google, Bing, Pinterest, and more.</p>
+        </div>
+
+        <div class="section">
+            <h2>✨ Supported Types</h2>
+            <ul>
+                <li><strong>Article</strong> - News, blog posts, and articles</li>
+                <li><strong>Product</strong> - E-commerce products with pricing and reviews</li>
+                <li><strong>Recipe</strong> - Cooking recipes with ingredients and instructions</li>
+                <li><strong>Event</strong> - Concerts, conferences, and happenings</li>
+                <li><strong>LocalBusiness</strong> - Stores, restaurants, and local services</li>
+                <li><strong>JobPosting</strong> - Job listings and employment opportunities</li>
+                <li><strong>Organization</strong> - Companies and institutions</li>
+                <li><strong>Video</strong> - Video content with metadata</li>
+                <li><strong>Movie</strong> - Film information and reviews</li>
+                <li><strong>Course</strong> - Educational courses and programs</li>
+                <li><strong>SoftwareApplication</strong> - Apps and software</li>
+                <li><strong>FAQ/QA Pages</strong> - Question and answer content</li>
+                <li><strong>Review</strong> - Product and service reviews</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🎨 Platform Coverage</h2>
+            <ul>
+                <li><strong>Google</strong> - 13 types, 64+ validation shapes ⭐⭐⭐⭐⭐</li>
+                <li><strong>Pinterest</strong> - 3 Rich Pin types (Article, Product, Recipe) ⭐⭐⭐</li>
+                <li><strong>Bing</strong> - 5 core types ⭐⭐⭐⭐</li>
+                <li><strong>Yandex</strong> - Coming soon 📁</li>
+            </ul>
+        </div>
+
+        <div class="note">
+            <strong>⚠️ Note:</strong> This is a Flask-based validation tool. To run the validator locally, you'll need to run the Python application. See the repository for setup instructions.
+        </div>
+
+        <div class="cta-buttons">
+            <a href="https://github.com/danbri/schemarama" class="btn btn-primary">View on GitHub</a>
+            <a href="https://github.com/danbri/schemarama/tree/master/demo/validation/shex" class="btn btn-secondary">Browse ShEx Schemas</a>
+            <a href="https://schema.org" class="btn btn-outline">Learn About Schema.org</a>
+        </div>
+
+        <div class="section">
+            <h2>🛠️ Key Features</h2>
+            <ul>
+                <li>✅ <strong>Tiered Validation</strong> - Base, platform, and variant-specific validation</li>
+                <li>✅ <strong>techdoc Annotations</strong> - Every property documented with official docs links</li>
+                <li>✅ <strong>Multi-Format Support</strong> - JSON-LD, Microdata, RDFa</li>
+                <li>✅ <strong>Platform-Specific Requirements</strong> - Validates against actual platform documentation</li>
+                <li>✅ <strong>Clear Severity Levels</strong> - Required, recommended (warning), and optional (info)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📖 Schema Organization</h2>
+            <p>Schemas are organized in a hierarchical structure:</p>
+            <ul>
+                <li><code>demo/validation/shex/shapes/</code> - Base Schema.org type definitions</li>
+                <li><code>demo/validation/shex/specific/Google/</code> - Google-specific requirements</li>
+                <li><code>demo/validation/shex/specific/Pinterest/</code> - Pinterest Rich Pins</li>
+                <li><code>demo/validation/shex/specific/Bing/</code> - Bing requirements</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🤝 Contributing</h2>
+            <p>This project is open source. Contributions for additional platforms (Yandex, Apple, etc.) or new structured data types are welcome!</p>
+        </div>
+
+        <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #666;">
+            <p>Forked from <a href="https://github.com/google/schemarama" style="color: #667eea;">google/schemarama</a></p>
+            <p style="margin-top: 10px;">🤖 Enhanced with multi-platform support</p>
+        </footer>
+    </div>
+</body>
+</html>

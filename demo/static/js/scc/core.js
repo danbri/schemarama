@@ -24,15 +24,17 @@ let annotations = {
 }
 
 $(document).ready(async () => {
-    await $.get(`shacl/shapes`, (res) => shaclShapes = res);
-    await $.get(`shacl/subclasses`, (res) => subclasses = res);
-    await $.get(`shex/shapes`, (res) => shexShapes = JSON.parse(res));
-    await $.get(`hierarchy`, (res) => {
+    await $.get(`shacl-shapes.ttl`, (res) => shaclShapes = res);
+    await $.get(`shacl-subclasses.ttl`, (res) => subclasses = res);
+    await $.get(`shex-shapes.json`, (res) => shexShapes = JSON.parse(res));
+    await $.get(`hierarchy.json`, (res) => {
         hierarchy = res;
         constructHierarchySelector(hierarchy, 0);
     });
-    await $.get(`services/map`, (res) => shapeToService = res);
-    $.get(`tests`, (res) => initTests(res.tests));
+    await $.get(`services-map.json`, (res) => shapeToService = res);
+    if (window.location.pathname.includes('demo')) {
+        // Tests not available in static deployment
+    }
 
     shexValidator = new schemarama.ShexValidator(shexShapes, { annotations: annotations });
     shaclValidator = new schemarama.ShaclValidator(shaclShapes, {
