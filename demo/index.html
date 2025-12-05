@@ -13,6 +13,12 @@
         <div class="title">Schema.org Content Checker (work-in-progress)</div>
         <div class="d-flex">
             <div class="lang-selector">
+                <label for="test-select">Load Example</label>
+                <select class="form-control" name="test-select" id="test-select">
+                    <option value="">-- Select Example --</option>
+                </select>
+            </div>
+            <div class="lang-selector">
                 <label for="validation-lang-select">Validation language</label>
                 <select class="form-control" name="validation-lang-select" id="validation-lang-select">
                     <option value="shex">ShEx</option>
@@ -26,10 +32,6 @@
                                     alt="validate"></div>
         <div class="block input-block">
             <textarea class="form-control" name="input-text" id="input-text" cols="30" rows="10"></textarea>
-            <div class="tests-display">
-                <div class="tests d-none"></div>
-                <div id="show-tests-btn">Show tests</div>
-            </div>
         </div>
         <div class="block output-block">
             <div class="hierarchy">

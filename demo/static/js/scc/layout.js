@@ -42,15 +42,33 @@ $(document).delegate('#input-text', 'keydown', function (e) {
     }
 });
 
-$('.tests-display').mouseenter(() => $('.tests').removeClass('d-none'));
-$('.tests-display').mouseleave(() => $('.tests').addClass('d-none'));
-
 function initTests(tests) {
-    $('#input-text').val(tests[3]);
+    // Populate the dropdown with test examples
+    const testNames = [
+        'Recipe (JSON-LD)',
+        'Recipe (Microdata)',
+        'Recipe (RDFa)',
+        'Recipe with error',
+        'Recipe with full metadata',
+        'Recipe with video',
+        'Dataset'
+    ];
+
     tests.forEach((test, idx) => {
-        $('.tests').append(`<div class="test" id="test-${idx + 1}">Test ${idx + 1}</div>`);
-        $(`#test-${idx + 1}`).click(() => $('#input-text').val(test));
-    })
+        const name = testNames[idx] || `Test ${idx + 1}`;
+        $('#test-select').append(`<option value="${idx}">${idx + 1}. ${name}</option>`);
+    });
+
+    // Load test when selected
+    $('#test-select').change(function() {
+        const idx = $(this).val();
+        if (idx !== '') {
+            $('#input-text').val(tests[parseInt(idx)]);
+        }
+    });
+
+    // Load first test by default
+    $('#input-text').val(tests[0]);
 }
 
 
@@ -68,10 +86,19 @@ function dataItemLayout(predicate, object, indent) {
 }
 
 function failureLayout(failure, type) {
+    const serviceMap = {
+        'ServiceA': 'Pinterest',
+        'ServiceB': 'Google',
+        'ServiceC': 'Bing',
+        'ServiceD': 'Yandex',
+        'Schema': 'Schema'
+    };
     let services = failure.services.map(x => {
-        // Extract platform name for icon (e.g., GoogleProduct -> Google)
+        // Map service codes to platform icons
         let iconName = x.service;
-        if (x.service.match(/^(Google|Pinterest|Bing|Yandex)/)) {
+        if (serviceMap[x.service]) {
+            iconName = serviceMap[x.service];
+        } else if (x.service.match(/^(Google|Pinterest|Bing|Yandex)/)) {
             iconName = x.service.match(/^(Google|Pinterest|Bing|Yandex)/)[0];
         }
         return `<a href="${x.url || ''}" title="${x.description || ""}">
@@ -115,9 +142,19 @@ function addReport(type, report, dataItems) {
 
 function constructHierarchySelector(data, indent) {
     let name = data.serviceName || data.service;
-    // Extract platform name for icon (e.g., GoogleProduct -> Google)
+    // Map service codes to platform icons
     let iconName = name;
-    if (name.match(/^(Google|Pinterest|Bing|Yandex)/)) {
+    const serviceMap = {
+        'ServiceA': 'Pinterest',
+        'ServiceB': 'Google',
+        'ServiceC': 'Bing',
+        'ServiceD': 'Yandex',
+        'Schema': 'Schema'
+    };
+    // Check if it's a service code
+    if (serviceMap[data.service]) {
+        iconName = serviceMap[data.service];
+    } else if (name.match(/^(Google|Pinterest|Bing|Yandex)/)) {
         iconName = name.match(/^(Google|Pinterest|Bing|Yandex)/)[0];
     }
     $('.h-items').append(`<div class="h-item">
