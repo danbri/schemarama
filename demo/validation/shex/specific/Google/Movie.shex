@@ -1,0 +1,36 @@
+<#ValidGoogleMovie> @<#ValidSchemaMovie> AND {
+    schema:name .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/movie#name"
+    // techdoc:description "Required. The name of the movie.";
+
+    schema:image .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/movie#image"
+    // techdoc:description "Required. An image that represents the movie. Image must be crawlable and indexable with aspect ratio of 6:9. Supported formats: .jpg, .png, .gif.";
+
+    schema:dateCreated .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/movie#datecreated"
+    // techdoc:description "Recommended. The date the movie was released."
+    // techdoc:identifier "warning";
+
+    schema:director .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/movie#director"
+    // techdoc:description "Recommended. The director of the movie."
+    // techdoc:identifier "warning";
+
+    schema:aggregateRating .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/movie#aggregaterating"
+    // techdoc:description "Recommended. Annotation for the average review score assigned to the movie. Follow Review snippet guidelines and AggregateRating requirements."
+    // techdoc:identifier "warning";
+
+    schema:review .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/movie#review"
+    // techdoc:description "Recommended. A nested Review of the movie. Must comply with Review snippet guidelines."
+    // techdoc:identifier "warning";
+}
+
+<#ValidGoogleMovieDirector> @<#ValidSchemaPerson> AND {
+    schema:name .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/movie#director-name"
+    // techdoc:description "Recommended. The name of the director."
+    // techdoc:identifier "warning";
+}

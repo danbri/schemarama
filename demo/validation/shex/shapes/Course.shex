@@ -1,0 +1,13 @@
+<#ValidSchemaCourse> @<#ValidSchemaCreativeWork> AND @<#ValidSchemaLearningResource> AND EXTRA a {
+	a [schema:Course];
+	schema:availableLanguage (@<#ValidSchemaLanguage> OR @<#ValidSchemaText>) *;
+	schema:courseCode @<#ValidSchemaText> *;
+	schema:coursePrerequisites (@<#ValidSchemaAlignmentObject> OR @<#ValidSchemaCourse> OR @<#ValidSchemaText>) *;
+	schema:educationalCredentialAwarded (@<#ValidSchemaEducationalOccupationalCredential> OR @<#ValidSchemaText> OR @<#ValidSchemaURL>) *;
+	schema:financialAidEligible (@<#ValidSchemaText>) *;
+	schema:hasCourseInstance @<#ValidSchemaCourseInstance> *;
+	schema:numberOfCredits (@<#ValidSchemaInteger> OR @<#ValidSchemaStructuredValue>) *;
+	schema:occupationalCredentialAwarded (@<#ValidSchemaEducationalOccupationalCredential> OR @<#ValidSchemaText> OR @<#ValidSchemaURL>) *;
+	schema:syllabusSections @<#ValidSchemaSyllabus> *;
+	schema:totalHistoricalEnrollment @<#ValidSchemaInteger> *;
+}

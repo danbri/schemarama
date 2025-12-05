@@ -1,0 +1,36 @@
+<#ValidBingArticle> @<#ValidSchemaArticle> AND {
+    schema:headline .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. The headline/title of the article. Bing supports Schema.org Article, NewsArticle, and BlogPosting types."
+    // techdoc:identifier "warning";
+
+    schema:image . +
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. Images associated with the article."
+    // techdoc:identifier "warning";
+
+    schema:author . +
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. The author of the article."
+    // techdoc:identifier "warning";
+
+    schema:datePublished .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. The date and time the article was first published."
+    // techdoc:identifier "warning";
+
+    schema:dateModified .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. The date and time the article was most recently modified."
+    // techdoc:identifier "warning";
+
+    schema:description .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. A description or summary of the article."
+    // techdoc:identifier "warning";
+
+    schema:publisher .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. The publisher of the article."
+    // techdoc:identifier "warning";
+}

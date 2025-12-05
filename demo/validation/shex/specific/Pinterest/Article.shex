@@ -1,0 +1,41 @@
+<#ValidPinterestArticle> @<#ValidSchemaArticle> AND {
+    schema:headline .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Required. The headline of the article. Displays as the title on rich pins.";
+
+    schema:description .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Required. A description of the article. Displays on the rich pin.";
+
+    schema:author .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Recommended. The author of the article. Displays author information on the rich pin."
+    // techdoc:identifier "warning";
+
+    schema:url .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Recommended. The URL of the article."
+    // techdoc:identifier "warning";
+
+    schema:name .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Recommended. The name/title of the article. Alternative to headline."
+    // techdoc:identifier "warning";
+
+    schema:image .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Recommended. High-quality images for the article. Pinterest recommends vertical images with 2:3 aspect ratio (e.g., 1000x1500px)."
+    // techdoc:identifier "warning";
+
+    schema:datePublished .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Recommended. The publication date of the article."
+    // techdoc:identifier "warning";
+}
+
+<#ValidPinterestArticleAuthor> @<#ValidSchemaPerson> OR @<#ValidSchemaOrganization> AND {
+    schema:name .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Recommended. The name of the article author."
+    // techdoc:identifier "warning";
+}

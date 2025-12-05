@@ -1,0 +1,103 @@
+<#ValidGoogleProduct> @<#ValidSchemaProduct> AND {
+    schema:name .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/product-snippet#name"
+    // techdoc:description "Required. The name of the product.";
+
+    schema:image . +
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/product-snippet#image"
+    // techdoc:description "Recommended. Image of the product. Provide 3 images with different aspect ratios."
+    // techdoc:identifier "warning";
+
+    schema:description .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/product-snippet#description"
+    // techdoc:description "Recommended. A detailed description of the product."
+    // techdoc:identifier "warning";
+
+    schema:sku .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/product-snippet#sku"
+    // techdoc:description "Recommended. The stock keeping unit identifier."
+    // techdoc:identifier "warning";
+
+    schema:mpn .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/product-snippet#mpn"
+    // techdoc:description "Recommended. The manufacturer part number."
+    // techdoc:identifier "warning";
+
+    schema:brand .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/product-snippet#brand"
+    // techdoc:description "Recommended. The brand of the product."
+    // techdoc:identifier "warning";
+
+    schema:review .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/product-snippet#review"
+    // techdoc:description "Recommended. A single review of the product. The reviewer must be a valid Person or Team."
+    // techdoc:identifier "warning";
+
+    schema:aggregateRating .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/product-snippet#aggregaterating"
+    // techdoc:description "Recommended. The average rating for the product based on multiple reviews."
+    // techdoc:identifier "warning";
+
+    schema:offers .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/product-snippet#offers"
+    // techdoc:description "Recommended. An offer to sell the product. Includes price and availability information."
+    // techdoc:identifier "warning";
+}
+
+<#ValidGoogleProductWithProsConsReview> @<#ValidGoogleProduct> AND {
+    schema:review @<#ValidSchemaReview> AND {
+        schema:positiveNotes @<#ValidSchemaItemList> .
+        // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/product-snippet#positivenotes"
+        // techdoc:description "Pros for the product. Must have at least 2 items total between positiveNotes and negativeNotes."
+        // techdoc:identifier "info";
+
+        schema:negativeNotes @<#ValidSchemaItemList> .
+        // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/product-snippet#negativenotes"
+        // techdoc:description "Cons for the product. Must have at least 2 items total between positiveNotes and negativeNotes."
+        // techdoc:identifier "info";
+    }
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/product-snippet#review-pros-cons"
+    // techdoc:description "Enhanced review format showing pros and cons for the product."
+    // techdoc:identifier "info";
+}
+
+<#ValidGoogleProductOffer> @<#ValidSchemaOffer> AND {
+    schema:price .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/product-snippet#offer-price"
+    // techdoc:description "Required. The price of the product. Use 0 for free products.";
+
+    schema:priceCurrency .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/product-snippet#offer-pricecurrency"
+    // techdoc:description "Recommended. The currency used for the price in 3-letter ISO 4217 format."
+    // techdoc:identifier "warning";
+
+    schema:availability .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/product-snippet#offer-availability"
+    // techdoc:description "Recommended. The availability of the product (e.g., InStock, OutOfStock, PreOrder)."
+    // techdoc:identifier "warning";
+
+    schema:priceValidUntil .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/product-snippet#offer-pricevaliduntil"
+    // techdoc:description "Recommended. The date after which the price is no longer valid (ISO 8601 format)."
+    // techdoc:identifier "warning";
+}
+
+<#ValidGoogleProductAggregateOffer> @<#ValidSchemaAggregateOffer> AND {
+    schema:lowPrice .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/product-snippet#aggregateoffer-lowprice"
+    // techdoc:description "Required. The lowest price among all offers.";
+
+    schema:priceCurrency .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/product-snippet#aggregateoffer-pricecurrency"
+    // techdoc:description "Required. The currency used for prices in 3-letter ISO 4217 format.";
+
+    schema:highPrice .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/product-snippet#aggregateoffer-highprice"
+    // techdoc:description "Recommended. The highest price among all offers."
+    // techdoc:identifier "warning";
+
+    schema:offerCount .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/product-snippet#aggregateoffer-offercount"
+    // techdoc:description "Recommended. The number of offers available."
+    // techdoc:identifier "warning";
+}

@@ -1,0 +1,51 @@
+<#ValidGoogleOrganization> @<#ValidSchemaOrganization> AND {
+    schema:name .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/organization#name"
+    // techdoc:description "Recommended. The name of your organization. This should generally align with the site name."
+    // techdoc:identifier "warning";
+
+    schema:url .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/organization#url"
+    // techdoc:description "Recommended. The URL of the website of your organization, if applicable."
+    // techdoc:identifier "warning";
+
+    schema:logo .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/organization#logo"
+    // techdoc:description "Recommended. A logo that is representative of the organization. The image must be at least 112x112px and be crawlable and indexable."
+    // techdoc:identifier "warning";
+
+    schema:description .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/organization#description"
+    // techdoc:description "Recommended. A detailed description of your organization, if applicable."
+    // techdoc:identifier "warning";
+
+    schema:address .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/organization#address"
+    // techdoc:description "Recommended. The address (physical or mailing) of your organization, if applicable. Especially important for LocalBusiness subtypes."
+    // techdoc:identifier "warning";
+
+    schema:contactPoint .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/organization#contactpoint"
+    // techdoc:description "Recommended. The best way for a user to contact your business, if applicable."
+    // techdoc:identifier "warning";
+
+    schema:email .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/organization#email"
+    // techdoc:description "Recommended. Primary contact email address for the organization."
+    // techdoc:identifier "warning";
+
+    schema:telephone .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/organization#telephone"
+    // techdoc:description "Recommended. Primary business phone number meant to be the primary contact method. Include country code and area code."
+    // techdoc:identifier "warning";
+
+    schema:sameAs .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/organization#sameas"
+    // techdoc:description "Recommended. The URL of a page on another website with additional information about your organization (social media profiles, Wikipedia, etc.)."
+    // techdoc:identifier "warning";
+
+    schema:alternateName .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/organization#alternatename"
+    // techdoc:description "Recommended. Another common name that your organization goes by, if applicable."
+    // techdoc:identifier "warning";
+}

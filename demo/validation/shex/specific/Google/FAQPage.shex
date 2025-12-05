@@ -1,0 +1,21 @@
+<#ValidGoogleFAQPage> @<#ValidSchemaFAQPage> AND {
+    schema:mainEntity @<#ValidSchemaQuestion> . +
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/faqpage#mainentity"
+    // techdoc:description "Required. An array of Question elements which contain the list of answered questions that this FAQPage is about.";
+}
+
+<#ValidGoogleFAQPageQuestion> @<#ValidSchemaQuestion> AND {
+    schema:name .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/faqpage#question-name"
+    // techdoc:description "Required. The full text of the question. For example, 'How long does it take to process a refund?'";
+
+    schema:acceptedAnswer @<#ValidSchemaAnswer> .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/faqpage#question-acceptedanswer"
+    // techdoc:description "Required. The answer to the question. There must be one answer per question.";
+}
+
+<#ValidGoogleFAQPageAnswer> @<#ValidSchemaAnswer> AND {
+    schema:text .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/faqpage#answer-text"
+    // techdoc:description "Required. The full answer to the question. The answer may contain HTML content such as links and lists. Supported tags: h1-h6, br, ol, ul, li, a, p, div, b, strong, i, em.";
+}

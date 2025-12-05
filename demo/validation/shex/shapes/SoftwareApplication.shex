@@ -1,0 +1,25 @@
+<#ValidSchemaSoftwareApplication> @<#ValidSchemaCreativeWork> AND EXTRA a {
+	a [schema:SoftwareApplication schema:MobileApplication schema:WebApplication schema:VideoGame];
+	schema:applicationCategory (@<#ValidSchemaText> OR @<#ValidSchemaURL>) *;
+	schema:applicationSubCategory (@<#ValidSchemaText> OR @<#ValidSchemaURL>) *;
+	schema:applicationSuite @<#ValidSchemaText> *;
+	schema:availableOnDevice @<#ValidSchemaText> *;
+	schema:countriesNotSupported @<#ValidSchemaText> *;
+	schema:countriesSupported @<#ValidSchemaText> *;
+	schema:downloadUrl @<#ValidSchemaURL> *;
+	schema:featureList (@<#ValidSchemaText> OR @<#ValidSchemaURL>) *;
+	schema:fileSize @<#ValidSchemaText> *;
+	schema:installUrl @<#ValidSchemaURL> *;
+	schema:memoryRequirements (@<#ValidSchemaText> OR @<#ValidSchemaURL>) *;
+	schema:operatingSystem @<#ValidSchemaText> *;
+	schema:permissions @<#ValidSchemaText> *;
+	schema:processorRequirements @<#ValidSchemaText> *;
+	schema:releaseNotes (@<#ValidSchemaText> OR @<#ValidSchemaURL>) *;
+	schema:screenshot (@<#ValidSchemaImageObject> OR @<#ValidSchemaURL>) *;
+	schema:softwareAddOn @<#ValidSchemaSoftwareApplication> *;
+	schema:softwareHelp @<#ValidSchemaCreativeWork> *;
+	schema:softwareRequirements (@<#ValidSchemaText> OR @<#ValidSchemaURL>) *;
+	schema:softwareVersion @<#ValidSchemaText> *;
+	schema:storageRequirements (@<#ValidSchemaText> OR @<#ValidSchemaURL>) *;
+	schema:supportingData @<#ValidSchemaDataFeed> *;
+}

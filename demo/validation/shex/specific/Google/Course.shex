@@ -1,0 +1,37 @@
+<#ValidGoogleCourse> @<#ValidSchemaCourse> AND {
+    schema:name .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/course#name"
+    // techdoc:description "Required. The title of the course.";
+
+    schema:description .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/course#description"
+    // techdoc:description "Required. A description of the course. Display limit of 60 characters.";
+
+    schema:provider .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/course#provider"
+    // techdoc:description "Recommended. The organization that publishes the source content of the course. For example, UC Berkeley."
+    // techdoc:identifier "warning";
+}
+
+<#ValidGoogleCourseProvider> @<#ValidSchemaOrganization> AND {
+    schema:name .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/course#provider-name"
+    // techdoc:description "Recommended. The name of the organization providing the course."
+    // techdoc:identifier "warning";
+}
+
+<#ValidGoogleCourseList> @<#ValidSchemaItemList> AND {
+    schema:itemListElement @<#ValidSchemaListItem> . +
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/course#itemlistelement"
+    // techdoc:description "Required for carousel display. Annotation for an individual item page. Every item must have a unique URL. Minimum 3 courses required.";
+}
+
+<#ValidGoogleCourseListItem> @<#ValidSchemaListItem> AND {
+    schema:position .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/course#listitem-position"
+    // techdoc:description "Required. Ordinal position of the item page in the list, starting with 1.";
+
+    schema:url .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/course#listitem-url"
+    // techdoc:description "Required. The canonical URL of the course detail page. Every item must have a unique URL.";
+}

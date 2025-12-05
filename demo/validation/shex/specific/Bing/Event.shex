@@ -1,0 +1,43 @@
+<#ValidBingEvent> @<#ValidSchemaEvent> AND {
+    schema:name .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Required. The title of the event.";
+
+    schema:startDate .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Required. The start date and time of the event.";
+
+    schema:location .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Required. The location where the event takes place.";
+
+    schema:description .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. A description of the event."
+    // techdoc:identifier "warning";
+
+    schema:endDate .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. The end date and time of the event."
+    // techdoc:identifier "warning";
+
+    schema:image .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. Images for the event."
+    // techdoc:identifier "warning";
+
+    schema:offers .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. Ticket offers for the event."
+    // techdoc:identifier "warning";
+
+    schema:performer .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. Performers at the event."
+    // techdoc:identifier "warning";
+
+    schema:organizer .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. The event organizer."
+    // techdoc:identifier "warning";
+}

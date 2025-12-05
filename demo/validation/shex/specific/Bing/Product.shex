@@ -1,0 +1,62 @@
+<#ValidBingProduct> @<#ValidSchemaProduct> AND {
+    schema:name .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Required. The name of the product. Bing supports Schema.org markup in JSON-LD, Microdata, or RDFa formats.";
+
+    schema:image . +
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. Product images. Bing supports multiple formats and has no specific image size requirements."
+    // techdoc:identifier "warning";
+
+    schema:description .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. A detailed description of the product."
+    // techdoc:identifier "warning";
+
+    schema:sku .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. The stock keeping unit identifier."
+    // techdoc:identifier "warning";
+
+    schema:mpn .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. The manufacturer part number."
+    // techdoc:identifier "warning";
+
+    schema:brand .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. The brand of the product."
+    // techdoc:identifier "warning";
+
+    schema:offers .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. An offer to sell the product with price and availability."
+    // techdoc:identifier "warning";
+
+    schema:aggregateRating .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. The average rating for the product."
+    // techdoc:identifier "warning";
+
+    schema:review .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. Customer reviews of the product."
+    // techdoc:identifier "warning";
+}
+
+<#ValidBingProductOffer> @<#ValidSchemaOffer> AND {
+    schema:price .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. The price of the product."
+    // techdoc:identifier "warning";
+
+    schema:priceCurrency .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. The 3-letter ISO 4217 currency code."
+    // techdoc:identifier "warning";
+
+    schema:availability .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. The availability status (e.g., InStock, OutOfStock)."
+    // techdoc:identifier "warning";
+}

@@ -1,0 +1,123 @@
+<#ValidGoogleEvent> @<#ValidSchemaEvent> AND {
+    schema:name .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#name"
+    // techdoc:description "Required. The full title of the event. The name must describe the event itself and not the location.";
+
+    schema:startDate .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#startdate"
+    // techdoc:description "Required. The start date and start time of the event in ISO-8601 format. Include both date and time when possible.";
+
+    schema:location .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#location"
+    // techdoc:description "Required. The location of the event. Set the @type to Place and include the location name and address.";
+
+    schema:description .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#description"
+    // techdoc:description "Recommended. Description of the event. Describe all details of the event to make it easier for users to understand and attend the event."
+    // techdoc:identifier "warning";
+
+    schema:endDate .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#enddate"
+    // techdoc:description "Recommended. The end date and end time of the event in ISO-8601 format. Use the same format as startDate."
+    // techdoc:identifier "warning";
+
+    schema:eventStatus .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#eventstatus"
+    // techdoc:description "Recommended. The status of the event (EventScheduled, EventCancelled, EventPostponed, or EventRescheduled). Defaults to EventScheduled if not specified."
+    // techdoc:identifier "warning";
+
+    schema:image . +
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#image"
+    // techdoc:description "Recommended. URL of an image or logo for the event. Images must be at least 720px wide, with 1920px recommended. Supports 16x9, 4x3, and 1x1 aspect ratios."
+    // techdoc:identifier "warning";
+
+    schema:offers .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#offers"
+    // techdoc:description "Recommended. An offer to sell tickets for the event. Include nested properties for price, availability, and purchase URL."
+    // techdoc:identifier "warning";
+
+    schema:organizer .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#organizer"
+    // techdoc:description "Recommended. The person or organization that is hosting the event."
+    // techdoc:identifier "warning";
+
+    schema:performer . +
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#performer"
+    // techdoc:description "Recommended. The participants performing at the event, such as artists and comedians."
+    // techdoc:identifier "warning";
+}
+
+<#ValidGoogleEventLocation> @<#ValidSchemaPlace> AND {
+    schema:name .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#location-name"
+    // techdoc:description "Required. The detailed name of the place or venue where the event is being held.";
+
+    schema:address .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#location-address"
+    // techdoc:description "Required. The venue's detailed street address. Must be a PostalAddress object with specific fields.";
+}
+
+<#ValidGoogleEventPostalAddress> @<#ValidSchemaPostalAddress> AND {
+    schema:streetAddress .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#postaladdress-streetaddress"
+    // techdoc:description "Recommended. The street address of the location."
+    // techdoc:identifier "warning";
+
+    schema:addressLocality .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#postaladdress-addresslocality"
+    // techdoc:description "Recommended. The locality (city or town) of the location."
+    // techdoc:identifier "warning";
+
+    schema:postalCode .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#postaladdress-postalcode"
+    // techdoc:description "Recommended. The postal code of the location."
+    // techdoc:identifier "warning";
+
+    schema:addressRegion .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#postaladdress-addressregion"
+    // techdoc:description "Recommended. The region (state or province) of the location."
+    // techdoc:identifier "warning";
+
+    schema:addressCountry .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#postaladdress-addresscountry"
+    // techdoc:description "Recommended. The country of the location (use 2-letter ISO 3166-1 alpha-2 country code)."
+    // techdoc:identifier "warning";
+}
+
+<#ValidGoogleEventOffer> @<#ValidSchemaOffer> AND {
+    schema:price .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#offer-price"
+    // techdoc:description "Recommended. The lowest available price for tickets. Use 0 for free events."
+    // techdoc:identifier "warning";
+
+    schema:priceCurrency .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#offer-pricecurrency"
+    // techdoc:description "Recommended. The 3-letter ISO 4217 currency code."
+    // techdoc:identifier "warning";
+
+    schema:availability .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#offer-availability"
+    // techdoc:description "Recommended. The availability of tickets (InStock, SoldOut, or PreOrder)."
+    // techdoc:identifier "warning";
+
+    schema:validFrom .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#offer-validfrom"
+    // techdoc:description "Recommended. The date and time when tickets go on sale in ISO-8601 format."
+    // techdoc:identifier "warning";
+
+    schema:url .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#offer-url"
+    // techdoc:description "Recommended. The URL of a page providing the ability to buy tickets. Must be crawlable and directly facilitate ticket purchase."
+    // techdoc:identifier "warning";
+}
+
+<#ValidGoogleEventRescheduled> @<#ValidGoogleEvent> AND {
+    schema:eventStatus (@<#ValidSchemaText> AND /EventRescheduled/)
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#eventstatus-rescheduled"
+    // techdoc:description "Required for rescheduled events. Set to EventRescheduled.";
+
+    schema:previousStartDate . +
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/event#previousstartdate"
+    // techdoc:description "Recommended. The previously scheduled start date for rescheduled events. Can be repeated for multiple reschedules."
+    // techdoc:identifier "warning";
+}

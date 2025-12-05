@@ -1,0 +1,42 @@
+<#ValidGoogleSoftwareApplication> @<#ValidSchemaSoftwareApplication> AND {
+    schema:name .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/software-app#name"
+    // techdoc:description "Required. The name of the app.";
+
+    schema:offers .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/software-app#offers"
+    // techdoc:description "Required. An offer to sell the app. Must include price property (use 0 for free apps).";
+
+    schema:applicationCategory .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/software-app#applicationcategory"
+    // techdoc:description "Recommended. The type of app (for example, BusinessApplication or GameApplication). Must be one of the supported application categories."
+    // techdoc:identifier "warning";
+
+    schema:operatingSystem .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/software-app#operatingsystem"
+    // techdoc:description "Recommended. The operating system(s) required to use the app (for example, Windows 7, OSX 10.6, Android 1.6)."
+    // techdoc:identifier "warning";
+}
+
+<#ValidGoogleSoftwareApplicationWithRating> @<#ValidGoogleSoftwareApplication> AND {
+    schema:aggregateRating .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/software-app#aggregaterating"
+    // techdoc:description "Required (unless review is provided). The average rating of the app based on multiple ratings or reviews. Follow Review snippet guidelines.";
+}
+
+<#ValidGoogleSoftwareApplicationWithReview> @<#ValidGoogleSoftwareApplication> AND {
+    schema:review .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/software-app#review"
+    // techdoc:description "Required (unless aggregateRating is provided). A review of the app. Follow Review snippet guidelines.";
+}
+
+<#ValidGoogleSoftwareApplicationOffer> @<#ValidSchemaOffer> AND {
+    schema:price .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/software-app#offer-price"
+    // techdoc:description "Required. The price of the app. Use 0 for free apps, or specify a numeric value for paid apps.";
+
+    schema:priceCurrency .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/software-app#offer-pricecurrency"
+    // techdoc:description "Recommended. The 3-letter ISO 4217 currency code. Recommended when price is greater than 0."
+    // techdoc:identifier "warning";
+}

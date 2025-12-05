@@ -1,0 +1,53 @@
+<#ValidPinterestProduct> @<#ValidSchemaProduct> AND {
+    schema:name .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Required. The name/title of the product. Displays on the rich pin.";
+
+    schema:url .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Required. The URL of the product page.";
+
+    schema:offers .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Required. An offer with pricing and availability information. Displays current price and availability on the rich pin.";
+
+    schema:description .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Recommended. Product details and description."
+    // techdoc:identifier "warning";
+
+    schema:image .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Recommended. High-quality product images. Pinterest recommends vertical images with 2:3 aspect ratio (e.g., 1000x1500px). Multiple images can showcase different product views."
+    // techdoc:identifier "warning";
+
+    schema:brand .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Recommended. The brand of the product."
+    // techdoc:identifier "warning";
+
+    schema:aggregateRating .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Recommended. Customer ratings for the product."
+    // techdoc:identifier "warning";
+}
+
+<#ValidPinterestProductOffer> @<#ValidSchemaOffer> AND {
+    schema:price .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Required. The current price of the product. Displays on the rich pin.";
+
+    schema:priceCurrency .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Required. The 3-letter ISO 4217 currency code (e.g., USD, EUR, GBP).";
+
+    schema:availability .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Recommended. The availability status (InStock, OutOfStock, PreOrder, etc.). Displays on the rich pin."
+    // techdoc:identifier "warning";
+
+    schema:url .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Recommended. Direct link to purchase the product."
+    // techdoc:identifier "warning";
+}

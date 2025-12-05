@@ -1,0 +1,83 @@
+<#ValidGoogleReview> @<#ValidSchemaReview> AND {
+    schema:author .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/review-snippet#author"
+    // techdoc:description "Required. The author of the review. The reviewer's name must be a valid name (for example, not promotional text like '50% off until Saturday'). Maximum 100 characters.";
+
+    schema:reviewRating .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/review-snippet#reviewrating"
+    // techdoc:description "Required. The rating given in this review. The rating can be a nested Rating or more specific subtype.";
+
+    schema:itemReviewed .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/review-snippet#itemreviewed"
+    // techdoc:description "Required (unless nested). The item that is being reviewed. The supported types include: Book, Course, Event, HowTo, LocalBusiness, Movie, Product, Recipe, SoftwareApplication, and many others.";
+
+    schema:reviewBody .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/review-snippet#reviewbody"
+    // techdoc:description "Recommended. The body of the review."
+    // techdoc:identifier "warning";
+
+    schema:datePublished .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/review-snippet#datepublished"
+    // techdoc:description "Recommended. The date that the review was published, in ISO 8601 date format."
+    // techdoc:identifier "warning";
+}
+
+<#ValidGoogleReviewAuthor> @<#ValidSchemaPerson> OR @<#ValidSchemaOrganization> AND {
+    schema:name .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/review-snippet#author-name"
+    // techdoc:description "Required. The name of the author. Must be a valid name (not promotional text). Maximum 100 characters.";
+}
+
+<#ValidGoogleReviewRating> @<#ValidSchemaRating> AND {
+    schema:ratingValue .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/review-snippet#rating-ratingvalue"
+    // techdoc:description "Required. A numerical quality rating for the item. Use a period (dot) for decimal points (4.4 not 4,4). Default scale is 1-5.";
+
+    schema:bestRating .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/review-snippet#rating-bestrating"
+    // techdoc:description "Recommended. The highest value allowed in this rating system. If omitted, 5 is assumed."
+    // techdoc:identifier "warning";
+
+    schema:worstRating .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/review-snippet#rating-worstrating"
+    // techdoc:description "Recommended. The lowest value allowed in this rating system. If omitted, 1 is assumed."
+    // techdoc:identifier "warning";
+}
+
+<#ValidGoogleReviewItemReviewed> @<#ValidSchemaThing> AND {
+    schema:name .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/review-snippet#itemreviewed-name"
+    // techdoc:description "Required. The name of the item that is being reviewed.";
+}
+
+<#ValidGoogleAggregateRating> @<#ValidSchemaAggregateRating> AND {
+    schema:itemReviewed .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/review-snippet#aggregaterating-itemreviewed"
+    // techdoc:description "Required (unless nested). The item that is being rated.";
+
+    schema:ratingValue .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/review-snippet#aggregaterating-ratingvalue"
+    // techdoc:description "Required. The average rating value of the item. Use a period (dot) for decimal points.";
+
+    schema:bestRating .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/review-snippet#aggregaterating-bestrating"
+    // techdoc:description "Recommended. The highest value allowed in this rating system. If omitted, 5 is assumed."
+    // techdoc:identifier "warning";
+
+    schema:worstRating .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/review-snippet#aggregaterating-worstrating"
+    // techdoc:description "Recommended. The lowest value allowed in this rating system. If omitted, 1 is assumed."
+    // techdoc:identifier "warning";
+}
+
+<#ValidGoogleAggregateRatingWithCount> @<#ValidGoogleAggregateRating> AND {
+    schema:ratingCount .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/review-snippet#aggregaterating-ratingcount"
+    // techdoc:description "Required (unless reviewCount is provided). The total number of ratings for the item.";
+}
+
+<#ValidGoogleAggregateRatingWithReviewCount> @<#ValidGoogleAggregateRating> AND {
+    schema:reviewCount .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/review-snippet#aggregaterating-reviewcount"
+    // techdoc:description "Required (unless ratingCount is provided). The total number of reviews for the item.";
+}

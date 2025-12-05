@@ -1,0 +1,137 @@
+<#ValidGoogleVideoObject> @<#ValidSchemaVideoObject> AND {
+    schema:name .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#name"
+    // techdoc:description "Required. The title of the video. Make sure to use unique text that clearly describes the video.";
+
+    schema:thumbnailUrl . +
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#thumbnailurl"
+    // techdoc:description "Required. A URL pointing to the video's unique thumbnail image file. Images must be at least 60x30 pixels and be crawlable and indexable.";
+
+    schema:uploadDate .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#uploaddate"
+    // techdoc:description "Required. The date and time the video was first published, in ISO 8601 format (YYYY-MM-DD or YYYY-MM-DDThh:mm:ss+TZD).";
+
+    schema:description .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#description"
+    // techdoc:description "Recommended. The description of the video. Make sure to use unique text that clearly describes the video. HTML tags are ignored."
+    // techdoc:identifier "warning";
+
+    schema:contentUrl .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#contenturl"
+    // techdoc:description "Recommended. A URL pointing to the actual video media file's content bytes, in one of the supported encoding formats."
+    // techdoc:identifier "warning";
+
+    schema:duration .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#duration"
+    // techdoc:description "Recommended. The duration of the video in ISO 8601 format. Videos must be at least 30 seconds long."
+    // techdoc:identifier "warning";
+
+    schema:embedUrl .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#embedurl"
+    // techdoc:description "Recommended. A URL pointing to a player for the specific video. Usually this is the information in the src element of an iframe."
+    // techdoc:identifier "warning";
+
+    schema:expires .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#expires"
+    // techdoc:description "Recommended. The date and time after which the video will no longer be available, in ISO 8601 format. Don't include if video has no expiration."
+    // techdoc:identifier "warning";
+
+    schema:interactionStatistic .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#interactionstatistic"
+    // techdoc:description "Recommended. The number of times the video has been watched. Must use InteractionCounter with interactionType: WatchAction."
+    // techdoc:identifier "warning";
+}
+
+<#ValidGoogleVideoObjectWithRegions> @<#ValidGoogleVideoObject> AND {
+    schema:regionsAllowed . +
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#regionsallowed"
+    // techdoc:description "Recommended. The regions where the video is allowed, in ISO 3166-1 alpha-2 format. If not specified, video is assumed allowed everywhere. Use either regionsAllowed OR ineligibleRegion, not both."
+    // techdoc:identifier "warning";
+}
+
+<#ValidGoogleVideoObjectWithIneligibleRegions> @<#ValidGoogleVideoObject> AND {
+    schema:ineligibleRegion . +
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#ineligibleregion"
+    // techdoc:description "Recommended. The region where the video isn't allowed, in ISO 3166-1 alpha-2 format. Use either regionsAllowed OR ineligibleRegion, not both."
+    // techdoc:identifier "warning";
+}
+
+<#ValidGoogleVideoObjectInteractionCounter> @<#ValidSchemaInteractionCounter> AND {
+    schema:interactionType (@<#ValidSchemaText> AND /WatchAction/)
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#interactioncounter-interactiontype"
+    // techdoc:description "Required. Must be set to WatchAction.";
+
+    schema:userInteractionCount .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#interactioncounter-userinteractioncount"
+    // techdoc:description "Required. The number of times the video has been watched.";
+}
+
+<#ValidGoogleVideoObjectWithClips> @<#ValidGoogleVideoObject> AND {
+    schema:hasPart @<#ValidSchemaClip> . +
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#haspart-clip"
+    // techdoc:description "Recommended for key moments. An array of one or more Clip objects that denote key moments in the video. Each clip must have a unique start time. Maximum 10 clips per video."
+    // techdoc:identifier "info";
+}
+
+<#ValidGoogleVideoObjectClip> @<#ValidSchemaClip> AND {
+    schema:name .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#clip-name"
+    // techdoc:description "Required. A descriptive title for the content of the clip.";
+
+    schema:startOffset .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#clip-startoffset"
+    // techdoc:description "Required. The number of seconds from the beginning of the video to the start of the clip.";
+
+    schema:url .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#clip-url"
+    // techdoc:description "Required. A URL that points to the start time of the clip. The URL must point to the same URL path as the VideoObject with additional query parameters specifying the time.";
+
+    schema:endOffset .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#clip-endoffset"
+    // techdoc:description "Recommended. The number of seconds from the beginning of the video to the end of the clip."
+    // techdoc:identifier "warning";
+}
+
+<#ValidGoogleVideoObjectWithSeekAction> @<#ValidGoogleVideoObject> AND {
+    schema:potentialAction @<#ValidSchemaSeekToAction>
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#potentialaction-seekstoaction"
+    // techdoc:description "Recommended for auto key moments. Indicates that Google can automatically identify key moments in your video. Google must be able to fetch your video content files."
+    // techdoc:identifier "info";
+}
+
+<#ValidGoogleVideoObjectSeekToAction> @<#ValidSchemaSeekToAction> AND {
+    schema:target @<#ValidSchemaEntryPoint>
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#seekstoaction-target"
+    // techdoc:description "Required. EntryPoint object with urlTemplate containing the {seek_to_second_number} placeholder.";
+
+    schema:startOffset-input .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#seekstoaction-startoffset-input"
+    // techdoc:description "Required. Text value must be 'required name=seek_to_second_number'.";
+}
+
+<#ValidGoogleVideoObjectSeekToActionEntryPoint> @<#ValidSchemaEntryPoint> AND {
+    schema:urlTemplate .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#entrypoint-urltemplate"
+    // techdoc:description "Required. The URL template with the {seek_to_second_number} placeholder that Google will replace with the number of seconds to seek into the video.";
+}
+
+<#ValidGoogleVideoObjectLiveBroadcast> @<#ValidGoogleVideoObject> AND {
+    schema:publication @<#ValidSchemaBroadcastEvent>
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#publication-broadcastevent"
+    // techdoc:description "Required for LIVE badge. Indicates the video is or was or will be a live stream. Must include isLiveBroadcast, startDate, and endDate properties."
+    // techdoc:identifier "info";
+}
+
+<#ValidGoogleVideoObjectBroadcastEvent> @<#ValidSchemaBroadcastEvent> AND {
+    schema:isLiveBroadcast (@<#ValidSchemaBoolean> AND /true/)
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#broadcastevent-islivebroadcast"
+    // techdoc:description "Required. Set to true if the video is, has been, or will be streamed live.";
+
+    schema:startDate .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#broadcastevent-startdate"
+    // techdoc:description "Required. The date and time when the live broadcast starts or is scheduled to start, in ISO 8601 format.";
+
+    schema:endDate .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/video#broadcastevent-enddate"
+    // techdoc:description "Required after video finishes. The date and time when the live broadcast ends, in ISO 8601 format. Must be provided once the video has finished.";
+}

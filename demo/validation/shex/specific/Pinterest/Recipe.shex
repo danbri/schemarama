@@ -1,0 +1,50 @@
+<#ValidPinterestRecipe> @<#ValidSchemaRecipe> AND {
+    schema:name .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Required. The name of the recipe. Display title for the rich pin.";
+
+    schema:description .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Recommended. A description of the recipe."
+    // techdoc:identifier "warning";
+
+    schema:aggregateRating .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Recommended. The average rating of the recipe. Displays ratings on the rich pin."
+    // techdoc:identifier "warning";
+
+    schema:url .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Recommended. The URL of the recipe page."
+    // techdoc:identifier "warning";
+
+    schema:recipeYield .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Recommended. Serving size information. Displays on the rich pin."
+    // techdoc:identifier "warning";
+
+    schema:recipeIngredient . +
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Recommended. List of ingredients used in the recipe. Displays on the rich pin."
+    // techdoc:identifier "warning";
+
+    schema:recipeInstructions .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Recommended. The steps to make the recipe. Displays cook time if duration specified."
+    // techdoc:identifier "warning";
+
+    schema:totalTime .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Recommended. Total cook time for the recipe. Displays on the rich pin."
+    // techdoc:identifier "warning";
+
+    schema:suitableForDiet .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Recommended. Dietary preferences (e.g., vegan, gluten-free). Displays on the rich pin."
+    // techdoc:identifier "warning";
+
+    schema:image .
+    // techdoc:url "https://help.pinterest.com/en/business/article/rich-pins"
+    // techdoc:description "Recommended. High-quality images of the recipe. Pinterest recommends vertical images with 2:3 aspect ratio (e.g., 1000x1500px)."
+    // techdoc:identifier "warning";
+}

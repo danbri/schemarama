@@ -1,0 +1,9 @@
+<#ValidSchemaLocalBusiness> @<#ValidSchemaOrganization> AND @<#ValidSchemaPlace> AND EXTRA a {
+	a [schema:LocalBusiness schema:AnimalShelter schema:ArchiveOrganization schema:AutomotiveBusiness schema:ChildCare schema:Dentist schema:DryCleaningOrLaundry schema:EmergencyService schema:EmploymentAgency schema:EntertainmentBusiness schema:FinancialService schema:FoodEstablishment schema:GovernmentOffice schema:HealthAndBeautyBusiness schema:HomeAndConstructionBusiness schema:InternetCafe schema:LegalService schema:Library schema:LodgingBusiness schema:MedicalBusiness schema:ProfessionalService schema:RadioStation schema:RealEstateAgent schema:RecyclingCenter schema:SelfStorage schema:ShoppingCenter schema:SportsActivityLocation schema:Store schema:TelevisionStation schema:TouristInformationCenter schema:TravelAgency];
+	schema:branchOf @<#ValidSchemaOrganization> *;
+	schema:currenciesAccepted @<#ValidSchemaText> *;
+	schema:openingHours @<#ValidSchemaText> *;
+	schema:openingHoursSpecification @<#ValidSchemaOpeningHoursSpecification> *;
+	schema:paymentAccepted @<#ValidSchemaText> *;
+	schema:priceRange @<#ValidSchemaText> *;
+}

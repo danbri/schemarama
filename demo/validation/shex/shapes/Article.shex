@@ -1,0 +1,11 @@
+<#ValidSchemaArticle> @<#ValidSchemaCreativeWork> AND EXTRA a {
+	a [schema:Article schema:NewsArticle schema:BlogPosting schema:ScholarlyArticle schema:TechArticle schema:Report schema:AdvertiserContentArticle schema:SatiricalArticle schema:AnalysisNewsArticle schema:AskPublicNewsArticle schema:BackgroundNewsArticle schema:OpinionNewsArticle schema:ReportageNewsArticle schema:ReviewNewsArticle];
+	schema:articleBody @<#ValidSchemaText> *;
+	schema:articleSection @<#ValidSchemaText> *;
+	schema:backstory (@<#ValidSchemaCreativeWork> OR @<#ValidSchemaText>) *;
+	schema:pageEnd (@<#ValidSchemaInteger> OR @<#ValidSchemaText>) *;
+	schema:pageStart (@<#ValidSchemaInteger> OR @<#ValidSchemaText>) *;
+	schema:pagination @<#ValidSchemaText> *;
+	schema:speakable (@<#ValidSchemaSpeakableSpecification> OR @<#ValidSchemaURL>) *;
+	schema:wordCount @<#ValidSchemaInteger> *;
+}

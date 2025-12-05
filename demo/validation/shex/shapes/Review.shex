@@ -1,0 +1,12 @@
+<#ValidSchemaReview> @<#ValidSchemaCreativeWork> AND EXTRA a {
+	a [schema:Review schema:ClaimReview schema:CriticReview schema:EmployerReview schema:MediaReview schema:Recommendation schema:ReviewNewsArticle schema:UserReview];
+	schema:associatedClaimReview @<#ValidSchemaReview> *;
+	schema:associatedMediaReview @<#ValidSchemaReview> *;
+	schema:associatedReview @<#ValidSchemaReview> *;
+	schema:itemReviewed @<#ValidSchemaThing> *;
+	schema:negativeNotes (@<#ValidSchemaItemList> OR @<#ValidSchemaListItem> OR @<#ValidSchemaText> OR @<#ValidSchemaWebContent>) *;
+	schema:positiveNotes (@<#ValidSchemaItemList> OR @<#ValidSchemaListItem> OR @<#ValidSchemaText> OR @<#ValidSchemaWebContent>) *;
+	schema:reviewAspect @<#ValidSchemaText> *;
+	schema:reviewBody @<#ValidSchemaText> *;
+	schema:reviewRating @<#ValidSchemaRating> *;
+}

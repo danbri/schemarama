@@ -1,0 +1,38 @@
+<#ValidGoogleArticle> @<#ValidSchemaArticle> AND {
+    schema:headline .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/article#headline"
+    // techdoc:description "Recommended. The title of the article. Consider using a concise title, as long titles may be truncated on some devices."
+    // techdoc:identifier "warning";
+
+    schema:image . +
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/article#image"
+    // techdoc:description "Recommended. Multiple high-resolution images with aspect ratios of 16x9, 4x3, and 1x1. Images must be at least 50K pixels and be crawlable and indexable."
+    // techdoc:identifier "warning";
+
+    schema:author . +
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/article#author"
+    // techdoc:description "Recommended. The author of the article. To help Google best understand authors across different pages, use person or organization structured data and follow the authorship best practices."
+    // techdoc:identifier "warning";
+
+    schema:datePublished .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/article#datepublished"
+    // techdoc:description "Recommended. The date and time the article was first published, in ISO 8601 format. Best practice: Include timezone information."
+    // techdoc:identifier "warning";
+
+    schema:dateModified .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/article#datemodified"
+    // techdoc:description "Recommended. The date and time the article was most recently modified, in ISO 8601 format. Only add if different from datePublished."
+    // techdoc:identifier "warning";
+}
+
+<#ValidGoogleArticleAuthor> @<#ValidSchemaPerson> OR @<#ValidSchemaOrganization> AND {
+    schema:name .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/article#author-name"
+    // techdoc:description "Required when using author. The name of the author."
+    // techdoc:identifier "warning";
+
+    schema:url .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/article#author-url"
+    // techdoc:description "Recommended. A link to a web page that uniquely identifies the author. Use internal profile pages or official social media pages."
+    // techdoc:identifier "warning";
+}

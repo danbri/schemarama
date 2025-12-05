@@ -1,0 +1,133 @@
+<#ValidGoogleLocalBusiness> @<#ValidSchemaLocalBusiness> AND {
+    schema:name .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/local-business#name"
+    // techdoc:description "Required. The name of the business.";
+
+    schema:address .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/local-business#address"
+    // techdoc:description "Required. The physical location of the business. Include as many PostalAddress properties as possible.";
+
+    schema:geo .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/local-business#geo"
+    // techdoc:description "Recommended. Geographic coordinates of the business location. Include latitude and longitude with at least 5 decimal places."
+    // techdoc:identifier "warning";
+
+    schema:telephone .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/local-business#telephone"
+    // techdoc:description "Recommended. A business phone number meant to be the primary contact method for customers. Include country code and area code."
+    // techdoc:identifier "warning";
+
+    schema:url .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/local-business#url"
+    // techdoc:description "Recommended. The fully-qualified URL of the specific business location. The URL must be a working link."
+    // techdoc:identifier "warning";
+
+    schema:priceRange .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/local-business#pricerange"
+    // techdoc:description "Recommended. The relative price range of a business, commonly specified by either a numerical range or normalized currency signs (maximum 100 characters)."
+    // techdoc:identifier "warning";
+
+    schema:openingHoursSpecification .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/local-business#openinghoursspecification"
+    // techdoc:description "Recommended. Hours during which the business location is open. Can be specified as an array or single object."
+    // techdoc:identifier "warning";
+}
+
+<#ValidGoogleLocalBusinessRestaurant> @<#ValidGoogleLocalBusiness> AND EXTRA a {
+    a [schema:Restaurant schema:FoodEstablishment schema:Bakery schema:BarOrPub schema:Brewery schema:CafeOrCoffeeShop schema:FastFoodRestaurant schema:IceCreamShop schema:Winery];
+
+    schema:menu .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/local-business#menu"
+    // techdoc:description "Recommended for food establishments. The fully-qualified URL of the menu."
+    // techdoc:identifier "warning";
+
+    schema:servesCuisine .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/local-business#servescuisine"
+    // techdoc:description "Recommended for restaurants. The type of cuisine the restaurant serves."
+    // techdoc:identifier "warning";
+}
+
+<#ValidGoogleLocalBusinessWithReviews> @<#ValidGoogleLocalBusiness> AND {
+    schema:aggregateRating .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/local-business#aggregaterating"
+    // techdoc:description "Recommended for review sites. The average rating of the local business based on multiple ratings or reviews. Only use for sites that capture reviews about other businesses."
+    // techdoc:identifier "warning";
+
+    schema:review .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/local-business#review"
+    // techdoc:description "Recommended for review sites. A review of the local business. Only use for sites that capture reviews about other businesses."
+    // techdoc:identifier "warning";
+}
+
+<#ValidGoogleLocalBusinessDepartment> @<#ValidGoogleLocalBusiness> AND {
+    schema:department @<#ValidSchemaLocalBusiness>
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/local-business#department"
+    // techdoc:description "Recommended. A nested item for a single department. Format the department name as: {store name} {department name}. You can define any LocalBusiness properties for a department."
+    // techdoc:identifier "warning";
+}
+
+<#ValidGoogleLocalBusinessGeoCoordinates> @<#ValidSchemaGeoCoordinates> AND {
+    schema:latitude .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/local-business#geo-latitude"
+    // techdoc:description "Recommended. The latitude of the business location with at least 5 decimal places for accuracy."
+    // techdoc:identifier "warning";
+
+    schema:longitude .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/local-business#geo-longitude"
+    // techdoc:description "Recommended. The longitude of the business location with at least 5 decimal places for accuracy."
+    // techdoc:identifier "warning";
+}
+
+<#ValidGoogleLocalBusinessPostalAddress> @<#ValidSchemaPostalAddress> AND {
+    schema:streetAddress .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/local-business#address-streetaddress"
+    // techdoc:description "Recommended. The street address of the business location."
+    // techdoc:identifier "warning";
+
+    schema:addressLocality .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/local-business#address-addresslocality"
+    // techdoc:description "Recommended. The locality (city or town) of the business location."
+    // techdoc:identifier "warning";
+
+    schema:addressRegion .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/local-business#address-addressregion"
+    // techdoc:description "Recommended. The region (state or province) of the business location."
+    // techdoc:identifier "warning";
+
+    schema:postalCode .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/local-business#address-postalcode"
+    // techdoc:description "Recommended. The postal code of the business location."
+    // techdoc:identifier "warning";
+
+    schema:addressCountry .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/local-business#address-addresscountry"
+    // techdoc:description "Recommended. The country of the business location (use 2-letter ISO 3166-1 alpha-2 country code)."
+    // techdoc:identifier "warning";
+}
+
+<#ValidGoogleLocalBusinessOpeningHours> @<#ValidSchemaOpeningHoursSpecification> AND {
+    schema:opens .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/local-business#openinghoursspecification-opens"
+    // techdoc:description "Recommended. The time the business location opens, in hh:mm:ss format."
+    // techdoc:identifier "warning";
+
+    schema:closes .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/local-business#openinghoursspecification-closes"
+    // techdoc:description "Recommended. The time the business location closes, in hh:mm:ss format."
+    // techdoc:identifier "warning";
+
+    schema:dayOfWeek .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/local-business#openinghoursspecification-dayofweek"
+    // techdoc:description "Recommended. The day of the week (Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, or schema.org URLs)."
+    // techdoc:identifier "warning";
+
+    schema:validFrom .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/local-business#openinghoursspecification-validfrom"
+    // techdoc:description "Recommended. The start date of a seasonal business closure, in YYYY-MM-DD format."
+    // techdoc:identifier "warning";
+
+    schema:validThrough .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/local-business#openinghoursspecification-validthrough"
+    // techdoc:description "Recommended. The end date of a seasonal business closure, in YYYY-MM-DD format."
+    // techdoc:identifier "warning";
+}

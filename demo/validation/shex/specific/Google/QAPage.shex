@@ -1,0 +1,144 @@
+<#ValidGoogleQAPage> @<#ValidSchemaQAPage> AND {
+    schema:mainEntity @<#ValidSchemaQuestion> .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#mainentity"
+    // techdoc:description "Required. The Question for this page must be nested under the mainEntity property of the QAPage item.";
+}
+
+<#ValidGoogleQAPageQuestion> @<#ValidSchemaQuestion> AND {
+    schema:name .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#question-name"
+    // techdoc:description "Required. The full text of the short form of the question. For example, 'How many teaspoons in a cup?'";
+
+    schema:answerCount .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#question-answercount"
+    // techdoc:description "Required. The total number of answers to the question, including both acceptedAnswer and suggestedAnswer. For example, if there are 15 answers total but only 10 are marked up due to pagination, this value would be 15.";
+
+    schema:text .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#question-text"
+    // techdoc:description "Recommended. The full text of the long form of the question."
+    // techdoc:identifier "warning";
+
+    schema:author .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#question-author"
+    // techdoc:description "Recommended. Information about who posed the question."
+    // techdoc:identifier "warning";
+
+    schema:datePublished .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#question-datepublished"
+    // techdoc:description "Recommended. The date and time the question was posted, in ISO 8601 format."
+    // techdoc:identifier "warning";
+
+    schema:dateModified .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#question-datemodified"
+    // techdoc:description "Recommended. The date and time the question was last edited, in ISO 8601 format."
+    // techdoc:identifier "warning";
+
+    schema:upvoteCount .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#question-upvotecount"
+    // techdoc:description "Recommended. The total number of votes that this question has received (combining upvotes and downvotes)."
+    // techdoc:identifier "warning";
+
+    schema:comment .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#question-comment"
+    // techdoc:description "Recommended. Comments or clarifying discussions about this question."
+    // techdoc:identifier "warning";
+
+    schema:image .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#question-image"
+    // techdoc:description "Recommended. Inline images within the question text."
+    // techdoc:identifier "warning";
+
+    schema:video .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#question-video"
+    // techdoc:description "Recommended. Inline videos within the question text."
+    // techdoc:identifier "warning";
+}
+
+<#ValidGoogleQAPageAnswer> @<#ValidSchemaAnswer> AND {
+    schema:text .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#answer-text"
+    // techdoc:description "Required. The full text of the answer. If only a portion is marked up, your content may not be shown and Google may not be able to show your content in a rich result.";
+
+    schema:author .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#answer-author"
+    // techdoc:description "Recommended. Information about who wrote the answer."
+    // techdoc:identifier "warning";
+
+    schema:url .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#answer-url"
+    // techdoc:description "Recommended. A URL that links directly to this answer. Strongly recommended to provide a URL for each answer."
+    // techdoc:identifier "warning";
+
+    schema:datePublished .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#answer-datepublished"
+    // techdoc:description "Recommended. The date and time the answer was posted, in ISO 8601 format."
+    // techdoc:identifier "warning";
+
+    schema:dateModified .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#answer-datemodified"
+    // techdoc:description "Recommended. The date and time the answer was last edited, in ISO 8601 format."
+    // techdoc:identifier "warning";
+
+    schema:upvoteCount .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#answer-upvotecount"
+    // techdoc:description "Recommended. The total number of votes that this answer has received."
+    // techdoc:identifier "warning";
+
+    schema:comment .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#answer-comment"
+    // techdoc:description "Recommended. Comments or clarifying discussions about this answer."
+    // techdoc:identifier "warning";
+
+    schema:image .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#answer-image"
+    // techdoc:description "Recommended. Inline images within the answer text."
+    // techdoc:identifier "warning";
+
+    schema:video .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#answer-video"
+    // techdoc:description "Recommended. Inline videos within the answer text."
+    // techdoc:identifier "warning";
+}
+
+<#ValidGoogleQAPageAuthor> @<#ValidSchemaPerson> OR @<#ValidSchemaOrganization> AND {
+    schema:url .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#author-url"
+    // techdoc:description "Recommended. A link to a web page that uniquely identifies the author, most likely a profile page."
+    // techdoc:identifier "warning";
+}
+
+<#ValidGoogleQAPageComment> @<#ValidSchemaComment> AND {
+    schema:text .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#comment-text"
+    // techdoc:description "Required. The full text of the comment. If only a portion is marked up, Google might not be able to determine the best text to show in Search.";
+
+    schema:author .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#comment-author"
+    // techdoc:description "Recommended. Information about who wrote the comment."
+    // techdoc:identifier "warning";
+
+    schema:datePublished .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#comment-datepublished"
+    // techdoc:description "Recommended. The date and time the comment was posted, in ISO 8601 format."
+    // techdoc:identifier "warning";
+
+    schema:dateModified .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#comment-datemodified"
+    // techdoc:description "Recommended. The date and time the comment was last edited, in ISO 8601 format."
+    // techdoc:identifier "warning";
+
+    schema:comment .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#comment-comment"
+    // techdoc:description "Recommended. Nested comments as threaded replies."
+    // techdoc:identifier "warning";
+
+    schema:image .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#comment-image"
+    // techdoc:description "Recommended. Inline images within the comment text."
+    // techdoc:identifier "warning";
+
+    schema:video .
+    // techdoc:url "https://developers.google.com/search/docs/appearance/structured-data/qapage#comment-video"
+    // techdoc:description "Recommended. Inline videos within the comment text."
+    // techdoc:identifier "warning";
+}

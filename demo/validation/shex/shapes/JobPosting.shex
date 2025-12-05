@@ -1,0 +1,38 @@
+<#ValidSchemaJobPosting> @<#ValidSchemaIntangible> AND EXTRA a {
+	a [schema:JobPosting];
+	schema:applicantLocationRequirements @<#ValidSchemaAdministrativeArea> *;
+	schema:applicationContact @<#ValidSchemaContactPoint> *;
+	schema:baseSalary (@<#ValidSchemaMonetaryAmount> OR @<#ValidSchemaNumber> OR @<#ValidSchemaPriceSpecification>) *;
+	schema:datePosted (@<#ValidSchemaDate> OR @<#ValidSchemaDateTime>) *;
+	schema:directApply @<#ValidSchemaBoolean> *;
+	schema:educationRequirements (@<#ValidSchemaEducationalOccupationalCredential> OR @<#ValidSchemaText>) *;
+	schema:eligibilityToWorkRequirement @<#ValidSchemaText> *;
+	schema:employerOverview @<#ValidSchemaText> *;
+	schema:employmentType @<#ValidSchemaText> *;
+	schema:employmentUnit @<#ValidSchemaOrganization> *;
+	schema:estimatedSalary (@<#ValidSchemaMonetaryAmount> OR @<#ValidSchemaMonetaryAmountDistribution> OR @<#ValidSchemaNumber>) *;
+	schema:experienceInPlaceOfEducation @<#ValidSchemaBoolean> *;
+	schema:experienceRequirements (@<#ValidSchemaOccupationalExperienceRequirements> OR @<#ValidSchemaText>) *;
+	schema:hiringOrganization (@<#ValidSchemaOrganization> OR @<#ValidSchemaPerson>) *;
+	schema:incentiveCompensation @<#ValidSchemaText> *;
+	schema:industry (@<#ValidSchemaText>) *;
+	schema:jobBenefits @<#ValidSchemaText> *;
+	schema:jobImmediateStart @<#ValidSchemaBoolean> *;
+	schema:jobLocation @<#ValidSchemaPlace> *;
+	schema:jobLocationType @<#ValidSchemaText> *;
+	schema:jobStartDate (@<#ValidSchemaDate> OR @<#ValidSchemaText>) *;
+	schema:occupationalCategory (@<#ValidSchemaText>) *;
+	schema:physicalRequirement (@<#ValidSchemaText> OR @<#ValidSchemaURL>) *;
+	schema:qualifications (@<#ValidSchemaEducationalOccupationalCredential> OR @<#ValidSchemaText>) *;
+	schema:relevantOccupation @<#ValidSchemaOccupation> *;
+	schema:responsibilities @<#ValidSchemaText> *;
+	schema:salaryCurrency @<#ValidSchemaText> *;
+	schema:securityClearanceRequirement (@<#ValidSchemaText> OR @<#ValidSchemaURL>) *;
+	schema:sensoryRequirement (@<#ValidSchemaText> OR @<#ValidSchemaURL>) *;
+	schema:skills (@<#ValidSchemaText>) *;
+	schema:specialCommitments @<#ValidSchemaText> *;
+	schema:title @<#ValidSchemaText> *;
+	schema:totalJobOpenings @<#ValidSchemaInteger> *;
+	schema:validThrough (@<#ValidSchemaDate> OR @<#ValidSchemaDateTime>) *;
+	schema:workHours @<#ValidSchemaText> *;
+}

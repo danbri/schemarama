@@ -1,0 +1,35 @@
+<#ValidBingLocalBusiness> @<#ValidSchemaLocalBusiness> AND {
+    schema:name .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Required. The name of the business.";
+
+    schema:address .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. The physical location of the business."
+    // techdoc:identifier "warning";
+
+    schema:telephone .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. Primary business phone number."
+    // techdoc:identifier "warning";
+
+    schema:url .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. The URL of the business website."
+    // techdoc:identifier "warning";
+
+    schema:openingHoursSpecification .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. Business hours of operation."
+    // techdoc:identifier "warning";
+
+    schema:geo .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. Geographic coordinates of the business."
+    // techdoc:identifier "warning";
+
+    schema:priceRange .
+    // techdoc:url "https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731"
+    // techdoc:description "Recommended. Price range indicator for the business."
+    // techdoc:identifier "warning";
+}
