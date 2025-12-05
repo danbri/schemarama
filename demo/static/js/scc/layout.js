@@ -69,8 +69,13 @@ function dataItemLayout(predicate, object, indent) {
 
 function failureLayout(failure, type) {
     let services = failure.services.map(x => {
+        // Extract platform name for icon (e.g., GoogleProduct -> Google)
+        let iconName = x.service;
+        if (x.service.match(/^(Google|Pinterest|Bing|Yandex)/)) {
+            iconName = x.service.match(/^(Google|Pinterest|Bing|Yandex)/)[0];
+        }
         return `<a href="${x.url || ''}" title="${x.description || ""}">
-            <img class="service-icon" src="static/images/services/${x.service}.png" alt="${x.service}"/>
+            <img class="service-icon" src="static/images/services/${iconName}.svg" alt="${x.service}"/>
         </a>`
     }).join('');
     return `<div class="failure ${type}">
@@ -110,10 +115,15 @@ function addReport(type, report, dataItems) {
 
 function constructHierarchySelector(data, indent) {
     let name = data.serviceName || data.service;
+    // Extract platform name for icon (e.g., GoogleProduct -> Google)
+    let iconName = name;
+    if (name.match(/^(Google|Pinterest|Bing|Yandex)/)) {
+        iconName = name.match(/^(Google|Pinterest|Bing|Yandex)/)[0];
+    }
     $('.h-items').append(`<div class="h-item">
           <div style="width: ${indent * 30}px"></div>
           <input type="checkbox" checked id="${name}" class="form-control">
-          <div> <img src="static/images/services/${name}.png" class="service-icon" alt="${name}"> ${name}</div>
+          <div> <img src="static/images/services/${iconName}.svg" class="service-icon" alt="${name}"> ${name}</div>
      </div>`);
     $(`#${name}`).change(function () {
         data.disabled = !this.checked;

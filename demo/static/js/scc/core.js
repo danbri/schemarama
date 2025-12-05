@@ -26,7 +26,7 @@ let annotations = {
 $(document).ready(async () => {
     await $.get(`shacl-shapes.ttl`, (res) => shaclShapes = res);
     await $.get(`shacl-subclasses.ttl`, (res) => subclasses = res);
-    await $.get(`shex-shapes.json`, (res) => shexShapes = JSON.parse(res));
+    await $.get(`shex-shapes.json`, (res) => shexShapes = typeof res === 'string' ? JSON.parse(res) : res);
     await $.get(`hierarchy.json`, (res) => {
         hierarchy = res;
         constructHierarchySelector(hierarchy, 0);
