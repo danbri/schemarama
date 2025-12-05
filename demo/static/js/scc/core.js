@@ -24,24 +24,36 @@ let annotations = {
 }
 
 $(document).ready(async () => {
-    await $.get(`shacl-shapes.ttl`, (res) => shaclShapes = res);
-    await $.get(`shacl-subclasses.ttl`, (res) => subclasses = res);
-    await $.get(`shex-shapes.json`, (res) => shexShapes = typeof res === 'string' ? JSON.parse(res) : res);
-    await $.get(`hierarchy.json`, (res) => {
-        hierarchy = res;
-        constructHierarchySelector(hierarchy, 0);
-    });
-    await $.get(`services-map.json`, (res) => shapeToService = res);
-    await $.get(`tests.json`, (res) => {
-        const tests = typeof res === 'string' ? JSON.parse(res) : res;
-        initTests(tests);
-    });
+    try {
+        console.log('Loading validation resources...');
+        await $.get(`shacl-shapes.ttl`, (res) => shaclShapes = res);
+        await $.get(`shacl-subclasses.ttl`, (res) => subclasses = res);
+        await $.get(`shex-shapes.json`, (res) => shexShapes = typeof res === 'string' ? JSON.parse(res) : res);
+        await $.get(`hierarchy.json`, (res) => {
+            hierarchy = res;
+            constructHierarchySelector(hierarchy, 0);
+        });
+        await $.get(`services-map.json`, (res) => shapeToService = res);
 
-    shexValidator = new schemarama.ShexValidator(shexShapes, { annotations: annotations });
-    shaclValidator = new schemarama.ShaclValidator(shaclShapes, {
-        annotations: annotations,
-        subclasses: subclasses,
-    });
+        console.log('Loading tests...');
+        await $.get(`tests.json`, (res) => {
+            console.log('Tests loaded:', res);
+            const tests = typeof res === 'string' ? JSON.parse(res) : res;
+            console.log('Parsed tests:', tests.length, 'examples');
+            initTests(tests);
+        });
+
+        console.log('Initializing validators...');
+        shexValidator = new schemarama.ShexValidator(shexShapes, { annotations: annotations });
+        shaclValidator = new schemarama.ShaclValidator(shaclShapes, {
+            annotations: annotations,
+            subclasses: subclasses,
+        });
+        console.log('Ready!');
+    } catch (error) {
+        console.error('Initialization error:', error);
+        alert('Error loading validation resources: ' + error.message);
+    }
 });
 
 async function getType(data, baseUrl) {

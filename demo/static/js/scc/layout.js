@@ -43,6 +43,8 @@ $(document).delegate('#input-text', 'keydown', function (e) {
 });
 
 function initTests(tests) {
+    console.log('initTests called with', tests.length, 'tests');
+
     // Populate the dropdown with test examples
     const testNames = [
         'Recipe (JSON-LD)',
@@ -57,17 +59,20 @@ function initTests(tests) {
     tests.forEach((test, idx) => {
         const name = testNames[idx] || `Test ${idx + 1}`;
         $('#test-select').append(`<option value="${idx}">${idx + 1}. ${name}</option>`);
+        console.log(`Added test ${idx + 1}: ${name}`);
     });
 
     // Load test when selected
     $('#test-select').change(function() {
         const idx = $(this).val();
         if (idx !== '') {
+            console.log('Loading test', idx);
             $('#input-text').val(tests[parseInt(idx)]);
         }
     });
 
     // Load first test by default
+    console.log('Loading first test by default');
     $('#input-text').val(tests[0]);
 }
 
